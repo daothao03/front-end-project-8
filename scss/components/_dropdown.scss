@@ -5,9 +5,9 @@
 
     width: min(1240px, 100%);
     // display: none;
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility 0s opacity 1s ease;
+    // visibility: hidden;
+    // opacity: 0;
+    // transition: visibility 0s opacity 1s ease;
 
     &__inner {
         --inner-max-height: min(582px, 100vh - 158px);
