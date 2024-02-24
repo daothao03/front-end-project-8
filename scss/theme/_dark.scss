@@ -1,10 +1,25 @@
+@use "../abtracts";
+
 html.dark {
     --text-color: #fff;
     --icon-color: brightness(0) saturate(100%) invert(100%) sepia(100%)
         saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
-
-    --header-bg-color: #171c28;
+    --body-bg: #171c28;
+    --header-bg-color: #292e39;
     --top-act-group-bg: ##292e39;
     --top-act-group-shadow: rgba(0, 0, 0, 0.2);
     --top-act-group-separate: #ededf6;
+
+    @include abtracts.green(lg) {
+        --header-color-shadow: rgba(0, 0, 0, 0.2);
+    }
+
+    // dropdown
+    --dropdown-bg: #2f3441;
+    --mega-menu-shadow: rgba(23, 28, 40, 0.4);
+    --dropdown-arrow-filter: brightness(0) saturate(100%) invert(18%) sepia(11%)
+        saturate(1036%) hue-rotate(186deg) brightness(95%) contrast(92%);
+    --top-menu-border-color: #171c28;
+    --menu-column-icon: brightness(0) saturate(100%) invert(100%) sepia(1%)
+        saturate(696%) hue-rotate(119deg) brightness(99%) contrast(98%);
 }

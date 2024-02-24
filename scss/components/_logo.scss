@@ -7,7 +7,11 @@
 
     @include abtracts.green(lg) {
         gap: 10px;
-        margin-left: 39px;
+        margin-left: 40px;
+    }
+
+    @include abtracts.green(md) {
+        margin-left: 0px;
     }
 
     &__title {

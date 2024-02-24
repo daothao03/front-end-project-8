@@ -1,0 +1,108 @@
+.dropdown {
+    position: absolute;
+    left: 0;
+    padding-top: 50px;
+
+    width: min(1240px, 100%);
+    // display: none;
+    // visibility: hidden;
+    // opacity: 0;
+    // transition: visibility 0s opacity 1s ease;
+
+    &__inner {
+        --inner-max-height: min(582px, 100vh - 158px);
+        --inner-padding: 30px;
+
+        max-height: var(
+            --inner-height
+        ); // khi thu nhỏ màn hình thì dropdown tự cuộn dọc tránh trôi header
+        position: relative;
+        border-radius: 1.25rem;
+        background: var(--dropdown-bg);
+        box-shadow: 0px 40px 90px 20px var(--mega-menu-shadow);
+
+        padding: var(--inner-padding);
+
+        &::before {
+            content: url("../icons/dropdown-arrow.svg");
+            position: absolute;
+            top: -13px;
+            left: var(--arrow-left-pos);
+            translate: -50%;
+            filter: var(--dropdown-arrow-filter);
+        }
+    }
+}
+
+.top-menu {
+    max-height: calc(
+        var(--inner-max-height) - var(--inner-padding) * 2
+    ); // kế thừa chiều cao của thẻ cha, trừ đi tổng padding trên dưới để nội dung không tròi ra ngoài
+
+    &__main {
+        overflow-y: auto;
+        max-height: inherit;
+        width: 292px;
+        border-right: 1px solid var(--top-menu-border-color);
+    }
+}
+
+.menu-column {
+    display: flex;
+    gap: 14px;
+
+    &__icon {
+        position: relative;
+        flex-shrink: 0; //không bị méo khi nội dung li quá dài
+
+        height: 36px;
+        width: 36px;
+    }
+
+    &__content {
+        flex: 1; // nội dung chiếm hết độ rộng còn lại
+    }
+
+    &__icon-1 {
+        object-fit: cover;
+        width: 30px;
+        height: 30px;
+    }
+
+    &__icon-2 {
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        object-fit: cover;
+        width: 24px;
+        height: 24px;
+
+        filter: var(--menu-column-icon);
+    }
+
+    &__heading {
+        margin-top: 4px;
+        font-size: 1.6rem;
+
+        font-weight: 500;
+        line-height: 150%;
+    }
+
+    &__list {
+        margin-top: 19px;
+    }
+
+    &__link {
+        display: block;
+        font-size: 1.4rem;
+        padding: 7px 0;
+
+        font-weight: 400;
+        line-height: 142.857%;
+
+        &:hover {
+            color: #0071dc;
+            font-weight: 500;
+        }
+    }
+}

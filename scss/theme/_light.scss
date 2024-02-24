@@ -1,9 +1,23 @@
+@use "../abtracts";
+
 html {
     --text-color: #1a162e;
     --icon-color: brightness(0) saturate(100%) invert(9%) sepia(29%)
         saturate(1037%) hue-rotate(210deg) brightness(97%) contrast(100%);
+    --body-bg: #f6f6f6;
     --header-bg-color: #eee;
     --top-act-group-bg: #fff;
     --top-act-group-shadow: rgba(0, 0, 0, 0.08);
     --top-act-group-separate: #ededf6;
+
+    @include abtracts.green(lg) {
+        --header-bg-color: #fff;
+        --header-color-shadow: rgba(237, 237, 246, 0.2);
+    }
+
+    // dropdown
+    --dropdown-bg: #fff;
+    --mega-menu-shadow: rgba(200, 200, 200, 0.4);
+
+    --top-menu-border-color: #d2d1d6;
 }
