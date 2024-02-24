@@ -1,0 +1,124 @@
+@use "../abtracts";
+
+%flexItemCenter {
+    display: flex;
+    align-items: center;
+}
+
+.header {
+    background: var(--header-bg-color);
+}
+
+.top-bar {
+    @extend %flexItemCenter;
+
+    padding: 30px 0;
+
+    @include abtracts.green(lg) {
+        padding: 20px 0;
+    }
+
+    @include abtracts.green(sm) {
+        padding: 16px 0;
+    }
+
+    &__more {
+        display: none;
+
+        @include abtracts.green(lg) {
+            display: block;
+        }
+    }
+}
+
+.navbar {
+    margin-left: 144px;
+
+    @include abtracts.green(xl) {
+        margin-left: 50px;
+    }
+
+    @include abtracts.green(lg) {
+        display: none;
+    }
+
+    &__list {
+        @extend %flexItemCenter;
+        gap: 30px;
+    }
+
+    &__link {
+        display: flex;
+        gap: 6px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+    }
+
+    &__arrow {
+        margin-top: 3px;
+    }
+}
+
+.top-act {
+    @extend %flexItemCenter;
+
+    margin-left: auto;
+    gap: 20px;
+
+    &__group {
+        @extend %flexItemCenter;
+
+        min-width: 50px;
+        height: 50px;
+
+        border-radius: 8px;
+        background: var(--top-act-group-bg);
+        box-shadow: 0px 20px 60px 10px rgba(237, 237, 246, 0.2);
+
+        @include abtracts.green(md) {
+            display: none;
+        }
+    }
+
+    &__group--single &__btn {
+        padding: 13px;
+    }
+
+    &__group--single {
+        @include abtracts.green(lg) {
+            display: none;
+        }
+    }
+
+    &__btn {
+        @extend %flexItemCenter;
+        gap: 10px;
+        padding: 13px 20px;
+        cursor: pointer;
+    }
+
+    &__title {
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 146.667%;
+    }
+
+    &__avatar {
+        width: 50px;
+        height: 50px;
+
+        border-radius: 8px;
+        background: url(<path-to-image>),
+            lightgray -205.145px -22.64px / 819.939% 546.626% no-repeat, #dfd2fa;
+        box-shadow: 0px 4px 14px 2px var(--top-act-group-shadow);
+
+        cursor: pointer;
+    }
+
+    &__separate {
+        width: 1px;
+        height: 30px;
+        background: var(--top-act-group-separate);
+    }
+}

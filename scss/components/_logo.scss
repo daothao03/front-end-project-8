@@ -1,0 +1,29 @@
+@use "../abtracts";
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    @include abtracts.green(lg) {
+        gap: 10px;
+        margin-left: 39px;
+    }
+
+    &__title {
+        font-family: Gordita;
+        font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 145.455%;
+
+        @include abtracts.green(lg) {
+            font-size: 1.8rem;
+        }
+    }
+
+    &__img {
+        @include abtracts.green(lg) {
+            width: 24px;
+        }
+    }
+}
